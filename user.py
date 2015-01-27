@@ -30,7 +30,7 @@ class User:
 
 # If run as main ...
 if __name__ == '__main__':
-        # Make a void save and load it
+    # Make a void save and load it
 	user = User()
 	user.id = 000000
 	user.username = "Beta"
