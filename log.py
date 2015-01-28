@@ -18,13 +18,13 @@ class Log:
 
     # Save log information in a .info file
     def save(self):
-        with open('logsdata.info', 'wb') as file:
+        with open('logdata.info', 'wb') as file:
             pickler = pickle.Pickler(file)
             pickler.dump(self) # save logs
 
     # Load log informations from .info file
     def load(self):
-        with open('logsdata.info', 'rb') as file:
+        with open('logdata.info', 'rb') as file:
             pickler = pickle.Unpickler(file)
             copy = pickler.load(); # Get saved log
             # Clone the log from saved one
