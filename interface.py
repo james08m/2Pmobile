@@ -1,5 +1,6 @@
 import pygame
-import datetime
+from utilities import *
+
 
 # Main window class
 class Win_Main:
@@ -43,10 +44,8 @@ class Win_Main:
             self.screen.fill((0,0,0))
 
             # Display header
-            current_time = datetime.datetime.now().time() # Get time
             font = pygame.font.SysFont("verdana", 10)
-            time_str = str(current_time.hour) + ":" + str(current_time.minute)
-            time = font.render(time_str, 1, (255,255,255))
+            time = font.render(getTimeMinutes(), 1, (255,255,255))
             self.screen.blit(time, (200, 3))
 
             # Display buttons
