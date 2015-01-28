@@ -45,7 +45,7 @@ class Win_Main:
 
             # Display header
             font = pygame.font.SysFont("verdana", 10)
-            time = font.render(getTimeMinutes(), 1, (255,255,255))
+            time = font.render(getTimeToMinutes(), 1, (255,255,255))
             self.screen.blit(time, (200, 3))
 
             # Display buttons
