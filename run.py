@@ -2,29 +2,30 @@
 import pygame
 import os
 from user import *
+from log import *
 from interface import *
 import datetime
 
 # Initialization ----------------------------------------
 print("Initialization...")
+log = Log()
+log.load()
 
-print("Loading user...")
+log.add("Loading user...")
 user = User()
 user.load()
-print("Hi " + user.username)
-print("Last login at " + user.lastlogin) 
 
-print("Init framebuffer/touchscreen and environment variables...")
+log.add("Init framebuffer/touchscreen and environment variables...")
 # Init framebuffer/touchscreen environment variables     # Code from piPhone github
 #os.putenv('SDL_VIDEODRIVER', 'fbcon')
 #os.putenv('SDL_FBDEV'      , '/dev/fb1')
 #os.putenv('SDL_MOUSEDRV'   , 'TSLIB')
 #os.putenv('SDL_MOUSEDEV'   , '/dev/input/touchscreen')
 
-print("Hidding mouse...")
+log.add("Hidding mouse...")
 #pygame.mouse.set_visible(False)
 
-print("Set display...")
+log.add("Set display...")
 pygame.init()
 window  = pygame.display.set_mode((240,320))
 
@@ -45,7 +46,7 @@ button3.setIcon(img_btn3)
 img_bg = pygame.image.load("images/bg.jpg").convert()
 
 # Mainloop ----------------------------------------------
-print("Mainloop...")
+log.add("Mainloop...")
 Running = True
 while Running:
 	event = pygame.event.poll()
@@ -72,4 +73,4 @@ while Running:
 	button3.draw(window)
 	pygame.display.flip()
 
-print("Quit")
+log.add("Quit")
