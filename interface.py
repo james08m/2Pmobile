@@ -26,7 +26,8 @@ class Win_Main:
             # Event handling
             event = pygame.event.poll()
             if event.type == pygame.MOUSEBUTTONDOWN: # If mouse down
-                pos = pygame.mouse.get_pos()
+                mouse_position = pygame.mouse.get_pos()
+
             elif event.type == pygame.KEYDOWN: # If key down (not supose to happen)
                 if event.key == pygame.K_ESCAPE:
                     self.open = False
@@ -46,6 +47,7 @@ class Win_Main:
             self.BTN_Settings.draw(self.screen)
             self.BTN_Mail.draw(self.screen)
             pygame.display.flip()
+        return 0
 
 
 
