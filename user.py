@@ -1,6 +1,6 @@
 import pickle
 
-# The User class is the interface to handle user information and saving them
+# User class
 class User:
         # Constructor
         def __init__(self):

@@ -1,7 +1,7 @@
 __author__ = 'J08M'
 import pickle
 
-# The class log handle the log of each user
+# Log class
 class Log:
     def __init__(self):
         self.logs = ["Create log"]

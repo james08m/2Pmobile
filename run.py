@@ -29,9 +29,8 @@ pygame.init()
 window  = pygame.display.set_mode((240,320))
 
 # Mainloop ----------------------------------------------
-log.add("Mainloop...")
+log.add("Main window...")
 WIN_Main = Win_Main(window)
 WIN_Main.exect()
-
 
 log.add("Quit")

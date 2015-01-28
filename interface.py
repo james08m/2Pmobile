@@ -1,7 +1,7 @@
 import pygame
 import datetime
 
-# Class of the Main window
+# Main window class
 class Win_Main:
     def __init__(self, screen):
         self.screen = screen
