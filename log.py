@@ -10,7 +10,7 @@ class Log:
     # Add a string to the logs list
     def add(self, log):
         self.logs.append(log)
-        self.size = self.logs.count()
+        self.size = len(self.logs)
 
     def display(self):
         for x in self.logs:
@@ -38,4 +38,10 @@ class Log:
 # If run as main ...
 if __name__ == '__main__':
     log = Log()
+    log2 = Log()
+    log.add("waiting...")
+    log.add("test...")
+    log.add("end...")
     log.save()
+    log2.load()
+    log2.display()
