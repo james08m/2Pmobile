@@ -27,6 +27,13 @@ class Win_Main:
             event = pygame.event.poll()
             if event.type == pygame.MOUSEBUTTONDOWN: # If mouse down
                 mouse_position = pygame.mouse.get_pos()
+                if self.BTN_Contacts.selected(mouse_position):
+                    print("Contacts")
+                elif self.BTN_Settings.selected(mouse_position):
+                    print("Settings")
+                elif self.BTN_Mail.selected(mouse_position):
+                    print("Mails")
+
 
             elif event.type == pygame.KEYDOWN: # If key down (not supose to happen)
                 if event.key == pygame.K_ESCAPE:
