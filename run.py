@@ -4,6 +4,7 @@ import os
 from user import *
 from log import *
 from interface import *
+from utilities import *
 
 # Initialization ----------------------------------------
 log = Log()
@@ -12,6 +13,7 @@ log.add("boot...")
 log.add("Loading user...")
 user = User()
 user.load()
+user.lastlogin = getTimeToMinutes()
 
 log.add("Init framebuffer/touchscreen and environment variables...")
 # Init framebuffer/touchscreen environment variables     # Code from piPhone github
@@ -32,5 +34,8 @@ log.add("Luching...")
 WIN_Main = Win_Main(window)
 WIN_Main.exect()
 
+log.add("Saving user..")
+user.save()
 log.add("Quit")
+
 log.save()
