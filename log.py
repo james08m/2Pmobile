@@ -1,5 +1,6 @@
 __author__ = 'J08M'
 import pickle
+from utilities import *
 
 # Log class
 class Log:
@@ -9,7 +10,7 @@ class Log:
 
     # Add a string to the logs list
     def add(self, log):
-        self.logs.append(log)
+        self.logs.append("[" + getTimeToSecondes() + "] " + log)
         self.size = len(self.logs)
 
     def display(self):
