@@ -33,3 +33,4 @@ WIN_Main = Win_Main(window)
 WIN_Main.exect()
 
 log.add("Quit")
+log.save()
