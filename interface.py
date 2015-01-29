@@ -8,19 +8,23 @@ class Win_Main:
         self.screen = screen
         self.open = True
         # Images  -----------------------------------------------
-        self.IMG_Contacts = pygame.image.load("icons/contacts.png").convert()
-        self.IMG_Settings = pygame.image.load("icons/settings.png").convert()
-        self.IMG_Mail = pygame.image.load("icons/mail.png").convert()
+        self.IMG_Video = pygame.image.load("icons/video.png")
+        self.IMG_Music = pygame.image.load("icons/music.png")
+        self.IMG_Camera = pygame.image.load("icons/camera.png")
+        self.IMG_Messages = pygame.image.load("icons/messages.png")
 
         # Buttons -----------------------------------------------
-        self.BTN_Contacts = Button((3,20,60,60))
-        self.BTN_Contacts.setIcon(self.IMG_Contacts)
+        self.BTN_Video = Button((4,25,55,55))
+        self.BTN_Video.setIcon(self.IMG_Video)
 
-        self.BTN_Settings = Button((66,20,60,60))
-        self.BTN_Settings.setIcon(self.IMG_Settings)
+        self.BTN_Music = Button((59,25,55,55))
+        self.BTN_Music.setIcon(self.IMG_Music)
 
-        self.BTN_Mail = Button((129,20,60,60))
-        self.BTN_Mail.setIcon(self.IMG_Mail)
+        self.BTN_Camera = Button((118,25,55,55))
+        self.BTN_Camera.setIcon(self.IMG_Camera)
+
+        self.BTN_Messages = Button((177,25,55,55))
+        self.BTN_Messages.setIcon(self.IMG_Messages)
 
     def exect(self):
         while self.open:
@@ -28,12 +32,14 @@ class Win_Main:
             event = pygame.event.poll()
             if event.type == pygame.MOUSEBUTTONDOWN: # If mouse down
                 mouse_position = pygame.mouse.get_pos()
-                if self.BTN_Contacts.selected(mouse_position):
-                    print("Contacts")
-                elif self.BTN_Settings.selected(mouse_position):
-                    print("Settings")
-                elif self.BTN_Mail.selected(mouse_position):
-                    print("Mails")
+                if self.BTN_Video.selected(mouse_position):
+                    print("Video")
+                elif self.BTN_Music.selected(mouse_position):
+                    print("Music")
+                elif self.BTN_Camera.selected(mouse_position):
+                    print("Camera")
+                elif self.BTN_Messages.selected(mouse_position):
+                    print("Messages")
 
 
             elif event.type == pygame.KEYDOWN: # If key down (not supose to happen)
@@ -49,9 +55,10 @@ class Win_Main:
             self.screen.blit(time, (200, 3))
 
             # Display buttons
-            self.BTN_Contacts.draw(self.screen)
-            self.BTN_Settings.draw(self.screen)
-            self.BTN_Mail.draw(self.screen)
+            self.BTN_Video.draw(self.screen)
+            self.BTN_Music.draw(self.screen)
+            self.BTN_Camera.draw(self.screen)
+            self.BTN_Messages.draw(self.screen)
             pygame.display.flip()
         return 0
 
