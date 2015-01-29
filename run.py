@@ -6,10 +6,9 @@ from log import *
 from interface import *
 
 # Initialization ----------------------------------------
-print("Initialization...")
 log = Log()
 log.load()
-
+log.add("boot...")
 log.add("Loading user...")
 user = User()
 user.load()
@@ -21,15 +20,15 @@ log.add("Init framebuffer/touchscreen and environment variables...")
 #os.putenv('SDL_MOUSEDRV'   , 'TSLIB')
 #os.putenv('SDL_MOUSEDEV'   , '/dev/input/touchscreen')
 
-log.add("Hidding mouse...")
+log.add("Hidding mouse cursor...")
 #pygame.mouse.set_visible(False)
 
-log.add("Set display...")
+log.add("Init screen display...")
 pygame.init()
 window  = pygame.display.set_mode((240,320))
 
 # Mainloop ----------------------------------------------
-log.add("Main window...")
+log.add("Luching...")
 WIN_Main = Win_Main(window)
 WIN_Main.exect()
 
