@@ -17,13 +17,13 @@ class Win_Main:
         self.BTN_Video = Button((4,25,55,55))
         self.BTN_Video.setIcon(self.IMG_Video)
 
-        self.BTN_Music = Button((59,25,55,55))
+        self.BTN_Music = Button((63,25,55,55))
         self.BTN_Music.setIcon(self.IMG_Music)
 
-        self.BTN_Camera = Button((118,25,55,55))
+        self.BTN_Camera = Button((122,25,55,55))
         self.BTN_Camera.setIcon(self.IMG_Camera)
 
-        self.BTN_Messages = Button((177,25,55,55))
+        self.BTN_Messages = Button((181,25,55,55))
         self.BTN_Messages.setIcon(self.IMG_Messages)
 
     def exect(self):
