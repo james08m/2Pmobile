@@ -31,7 +31,7 @@ window  = pygame.display.set_mode((240,320))
 
 # Mainloop ----------------------------------------------
 log.add("Luching...")
-WIN_Main = Win_Main(window)
+WIN_Main = Win_Main(window, 0)
 WIN_Main.exect()
 
 log.add("Saving user..")

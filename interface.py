@@ -4,14 +4,17 @@ from utilities import *
 
 # Main window class
 class Win_Main:
-    def __init__(self, screen):
+    def __init__(self, screen, code):
         self.screen = screen
         self.open = True
+        self.lastwindow = code
+
         # Images  -----------------------------------------------
         self.IMG_Video = pygame.image.load("icons/video.png")
         self.IMG_Music = pygame.image.load("icons/music.png")
         self.IMG_Camera = pygame.image.load("icons/camera.png")
         self.IMG_Messages = pygame.image.load("icons/messages.png")
+        self.IMG_Browser = pygame.image.load("icons/browser.png")
 
         # Buttons -----------------------------------------------
         self.BTN_Video = Button((4,25,55,55))
@@ -25,6 +28,9 @@ class Win_Main:
 
         self.BTN_Messages = Button((181,25,55,55))
         self.BTN_Messages.setIcon(self.IMG_Messages)
+
+        self.BTN_Browser = Button((34,80,55,55))
+        self.BTN_Browser.setIcon(self.IMG_Browser)
 
     def exect(self):
         while self.open:
@@ -59,6 +65,7 @@ class Win_Main:
             self.BTN_Music.draw(self.screen)
             self.BTN_Camera.draw(self.screen)
             self.BTN_Messages.draw(self.screen)
+            self.BTN_Browser.draw(self.screen)
             pygame.display.flip()
         return 0
 
