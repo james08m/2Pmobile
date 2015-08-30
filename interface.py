@@ -17,19 +17,19 @@ class Win_Main:
         self.IMG_Browser = pygame.image.load("icons/browser.png")
 
         # Buttons -----------------------------------------------
-        self.BTN_Video = Button((4,25,55,55))
+        self.BTN_Video = Button((12.5,35,55,55))
         self.BTN_Video.setIcon(self.IMG_Video)
 
-        self.BTN_Music = Button((63,25,55,55))
+        self.BTN_Music = Button((92.5,35,55,55))
         self.BTN_Music.setIcon(self.IMG_Music)
 
-        self.BTN_Camera = Button((122,25,55,55))
+        self.BTN_Camera = Button((172.5,35,55,55))
         self.BTN_Camera.setIcon(self.IMG_Camera)
 
-        self.BTN_Messages = Button((181,25,55,55))
+        self.BTN_Messages = Button((252.5,35,55,55))
         self.BTN_Messages.setIcon(self.IMG_Messages)
 
-        self.BTN_Browser = Button((34,80,55,55))
+        self.BTN_Browser = Button((52,90,55,55))
         self.BTN_Browser.setIcon(self.IMG_Browser)
 
     def exect(self):
@@ -56,9 +56,9 @@ class Win_Main:
             self.screen.fill((0,0,0))
 
             # Display header
-            font = pygame.font.SysFont("verdana", 10)
+            font = pygame.font.SysFont("verdana", 12)
             time = font.render(getTimeToMinutes(), 1, (255,255,255))
-            self.screen.blit(time, (200, 3))
+            self.screen.blit(time, (285, 6))
 
             # Display buttons
             self.BTN_Video.draw(self.screen)
