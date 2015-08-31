@@ -11,17 +11,17 @@ class Win_Main:
 
         # Images  -----------------------------------------------
         self.IMG_Phone = pygame.image.load("icons/iphone.png")
-		self.IMG_Messages = pygame.image.load("icons/imessages2.png")
+        self.IMG_Messages = pygame.image.load("icons/imessages2.png")
         self.IMG_Music = pygame.image.load("icons/imusic.png")
         self.IMG_Contact = pygame.image.load("icons/icontact.png")
         self.IMG_Camera = pygame.image.load("icons/icamera.png")
-		self.IMG_Video = pygame.image.load("icons/ivideo.png")
+        self.IMG_Video = pygame.image.load("icons/ivideo.png")
 
         # Buttons -----------------------------------------------
         self.BTN_Phone = Button((20,390,80,80))
         self.BTN_Phone.setIcon(self.IMG_Phone)
 
-		self.BTN_Messages = Button((120,390,80,80))
+        self.BTN_Messages = Button((120,390,80,80))
         self.BTN_Messages.setIcon(self.IMG_Messages)
 
         self.BTN_Music = Button((220,390,80,80))
@@ -33,7 +33,7 @@ class Win_Main:
         self.BTN_Camera = Button((120,300,80,80))
         self.BTN_Camera.setIcon(self.IMG_Camera)
 
-		self.BTN_Video = Button((220,300,80,80))
+        self.BTN_Video = Button((220,300,80,80))
         self.BTN_Video.setIcon(self.IMG_Video)
 
     def exect(self):
