@@ -74,7 +74,7 @@ class Win_Main:
             self.BTN_Music.draw(self.screen)
             self.BTN_Contact.draw(self.screen)
             self.BTN_Camera.draw(self.screen)
-			self.BTN_Video.draw(self.screen)
+            self.BTN_Video.draw(self.screen)
             pygame.display.flip()
         return 0
 
