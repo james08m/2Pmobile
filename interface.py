@@ -18,22 +18,22 @@ class Win_Main:
         self.IMG_Video = pygame.image.load("icons/ivideo.png")
 
         # Buttons -----------------------------------------------
-        self.BTN_Phone = Button((35,380,60,60))
+        self.BTN_Phone = Button((35,385,60,60))
         self.BTN_Phone.setIcon(self.IMG_Phone)
 
-        self.BTN_Messages = Button((130,380,60,60))
+        self.BTN_Messages = Button((130,385,60,60))
         self.BTN_Messages.setIcon(self.IMG_Messages)
 
-        self.BTN_Music = Button((225,380,60,60))
+        self.BTN_Music = Button((225,385,60,60))
         self.BTN_Music.setIcon(self.IMG_Music)
 
-        self.BTN_Contact = Button((35,290,60,60))
+        self.BTN_Contact = Button((35,295,60,60))
         self.BTN_Contact.setIcon(self.IMG_Contact)
 
-        self.BTN_Camera = Button((130,290,60,60))
+        self.BTN_Camera = Button((130,295,60,60))
         self.BTN_Camera.setIcon(self.IMG_Camera)
 
-        self.BTN_Video = Button((225,290,60,60))
+        self.BTN_Video = Button((225,295,60,60))
         self.BTN_Video.setIcon(self.IMG_Video)
 
     def exect(self):
