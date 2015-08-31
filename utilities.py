@@ -1,5 +1,6 @@
 __author__ = 'J08M'
 import datetime
+import getpass
 
 def getTimeToMinutes():
     current_time = datetime.datetime.now().time()
@@ -20,5 +21,8 @@ def getTimeToSecondes():
     time_str += str(current_time.second)
     return time_str
 
+def getUser():
+	return getpass.getuser()
+	
 
 
