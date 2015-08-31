@@ -18,22 +18,22 @@ class Win_Main:
 		self.IMG_Video = pygame.image.load("icons/ivideo.png")
 
         # Buttons -----------------------------------------------
-        self.BTN_Phone = Button((12.5,35,55,55))
+        self.BTN_Phone = Button((20,390,80,80))
         self.BTN_Phone.setIcon(self.IMG_Phone)
 
-		self.BTN_Messages = Button((252.5,35,55,55))
+		self.BTN_Messages = Button((120,390,80,80))
         self.BTN_Messages.setIcon(self.IMG_Messages)
 
-        self.BTN_Music = Button((92.5,35,55,55))
+        self.BTN_Music = Button((220,390,80,80))
         self.BTN_Music.setIcon(self.IMG_Music)
 
-        self.BTN_Contact = Button((172.5,35,55,55))
+        self.BTN_Contact = Button((20,300,80,80))
         self.BTN_Contact.setIcon(self.IMG_Contact)
 
-        self.BTN_Camera = Button((52,90,55,55))
+        self.BTN_Camera = Button((120,300,80,80))
         self.BTN_Camera.setIcon(self.IMG_Camera)
 
-		self.BTN_Video = Button((52,90,55,55))
+		self.BTN_Video = Button((220,300,80,80))
         self.BTN_Video.setIcon(self.IMG_Video)
 
     def exect(self):
@@ -44,12 +44,16 @@ class Win_Main:
                 mouse_position = pygame.mouse.get_pos()
                 if self.BTN_Phone.selected(mouse_position):
                     print("Phone")
-                elif self.BTN_Music.selected(mouse_position):
-                    print("Music")
-                elif self.BTN_Camera.selected(mouse_position):
-                    print("Camera")
                 elif self.BTN_Messages.selected(mouse_position):
                     print("Messages")
+                elif self.BTN_Music.selected(mouse_position):
+                    print("Music")
+                elif self.BTN_Contact.selected(mouse_position):
+                    print("Contact")
+                elif self.BTN_Camera.selected(mouse_position):
+                    print("Camera")
+                elif self.BTN_Video.selected(mouse_position):
+                    print("Video")
 
 
             elif event.type == pygame.KEYDOWN: # If key down (not supose to happen)
@@ -65,11 +69,12 @@ class Win_Main:
             self.screen.blit(time, (285, 6))
 
             # Display buttons
-            self.BTN_Video.draw(self.screen)
-            self.BTN_Music.draw(self.screen)
-            self.BTN_Camera.draw(self.screen)
+            self.BTN_Phone.draw(self.screen)
             self.BTN_Messages.draw(self.screen)
-            self.BTN_Browser.draw(self.screen)
+            self.BTN_Music.draw(self.screen)
+            self.BTN_Contact.draw(self.screen)
+            self.BTN_Camera.draw(self.screen)
+			self.BTN_Video.draw(self.screen)
             pygame.display.flip()
         return 0
 
