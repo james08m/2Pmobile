@@ -10,27 +10,31 @@ class Win_Main:
         self.lastwindow = code
 
         # Images  -----------------------------------------------
-        self.IMG_Video = pygame.image.load("icons/video.png")
-        self.IMG_Music = pygame.image.load("icons/music.png")
-        self.IMG_Camera = pygame.image.load("icons/camera.png")
-        self.IMG_Messages = pygame.image.load("icons/messages.png")
-        self.IMG_Browser = pygame.image.load("icons/browser.png")
+        self.IMG_Phone = pygame.image.load("icons/iphone.png")
+		self.IMG_Messages = pygame.image.load("icons/imessages2.png")
+        self.IMG_Music = pygame.image.load("icons/imusic.png")
+        self.IMG_Contact = pygame.image.load("icons/icontact.png")
+        self.IMG_Camera = pygame.image.load("icons/icamera.png")
+		self.IMG_Video = pygame.image.load("icons/ivideo.png")
 
         # Buttons -----------------------------------------------
-        self.BTN_Video = Button((12.5,35,55,55))
-        self.BTN_Video.setIcon(self.IMG_Video)
+        self.BTN_Phone = Button((12.5,35,55,55))
+        self.BTN_Phone.setIcon(self.IMG_Phone)
+
+		self.BTN_Messages = Button((252.5,35,55,55))
+        self.BTN_Messages.setIcon(self.IMG_Messages)
 
         self.BTN_Music = Button((92.5,35,55,55))
         self.BTN_Music.setIcon(self.IMG_Music)
 
-        self.BTN_Camera = Button((172.5,35,55,55))
+        self.BTN_Contact = Button((172.5,35,55,55))
+        self.BTN_Contact.setIcon(self.IMG_Contact)
+
+        self.BTN_Camera = Button((52,90,55,55))
         self.BTN_Camera.setIcon(self.IMG_Camera)
 
-        self.BTN_Messages = Button((252.5,35,55,55))
-        self.BTN_Messages.setIcon(self.IMG_Messages)
-
-        self.BTN_Browser = Button((52,90,55,55))
-        self.BTN_Browser.setIcon(self.IMG_Browser)
+		self.BTN_Video = Button((52,90,55,55))
+        self.BTN_Video.setIcon(self.IMG_Video)
 
     def exect(self):
         while self.open:
@@ -38,8 +42,8 @@ class Win_Main:
             event = pygame.event.poll()
             if event.type == pygame.MOUSEBUTTONDOWN: # If mouse down
                 mouse_position = pygame.mouse.get_pos()
-                if self.BTN_Video.selected(mouse_position):
-                    print("Video")
+                if self.BTN_Phone.selected(mouse_position):
+                    print("Phone")
                 elif self.BTN_Music.selected(mouse_position):
                     print("Music")
                 elif self.BTN_Camera.selected(mouse_position):
