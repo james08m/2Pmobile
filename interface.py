@@ -43,17 +43,17 @@ class Win_Main:
             if event.type == pygame.MOUSEBUTTONDOWN: # If mouse down
                 mouse_position = pygame.mouse.get_pos()
                 if self.BTN_Phone.selected(mouse_position):
-                    print("Phone")
+                    print "Phone"
                 elif self.BTN_Messages.selected(mouse_position):
-                    print("Messages")
+                    print "Messages"
                 elif self.BTN_Music.selected(mouse_position):
-                    print("Music")
+                    print "Music"
                 elif self.BTN_Contact.selected(mouse_position):
-                    print("Contact")
+                    print "Contact"
                 elif self.BTN_Camera.selected(mouse_position):
-                    print("Camera")
+                    print "Camera"
                 elif self.BTN_Video.selected(mouse_position):
-                    print("Video")
+                    print "Video"
 
 
             elif event.type == pygame.KEYDOWN: # If key down (not supose to happen)
@@ -64,9 +64,9 @@ class Win_Main:
             self.screen.fill((0,0,0))
 
             # Display header
-            font = pygame.font.SysFont("verdana", 12)
+            font = pygame.font.SysFont("verdana", 13)
             time = font.render(getTimeToMinutes(), 1, (255,255,255))
-            self.screen.blit(time, (280, 6))
+            self.screen.blit(time, (275, 8))
 
             # Display buttons
             self.BTN_Phone.draw(self.screen)
