@@ -105,7 +105,7 @@ class Header:
 	def draw(self, screen):
 		
 		# Display background in RGBA (Opacity)
-		bg = pygame.Surface(self.rect)
+		bg = pygame.Surface((self.rect[3], self.rect[4]))
 		bg.set_alpha(128)
 		bg.fill(self.color) 
 		screen.blit(bg, self.rect)
