@@ -88,7 +88,7 @@ class WIN_Main:
 class Header:
 	def __init__(self, rect):
 		self.rect = rect
-		self.color = pygame.Color((0,0,0))
+		self.color = (0,0,0)
 		self.font = pygame.font.SysFont("verdana", 13)
 
 	def selected(self, pos):
