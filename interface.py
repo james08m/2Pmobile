@@ -10,7 +10,7 @@ class WIN_Main:
         self.open = True
         self.lastwindow = code
 
-        # Images  -----------------------------------------------
+        # Images -----------------------------------------------
         self.IMG_Background = pygame.image.load(User.getFilepath()+"/Pictures/bg.jpg")
         self.IMG_Phone = pygame.image.load("icons/iphone.png")
         self.IMG_Messages = pygame.image.load("icons/imessages2.png")
@@ -18,6 +18,9 @@ class WIN_Main:
         self.IMG_Contact = pygame.image.load("icons/icontact.png")
         self.IMG_Camera = pygame.image.load("icons/icamera.png")
         self.IMG_Video = pygame.image.load("icons/ivideo.png")
+
+		# Header ------------------------------------------------
+		self.Header = Header((0,0,20,240))
 
         # Buttons -----------------------------------------------
         self.BTN_Phone = Button((35,385,60,60))
@@ -66,12 +69,8 @@ class WIN_Main:
             self.screen.blit(self.IMG_Background, (0,0))
 
             # Display header
-            font = pygame.font.SysFont("verdana", 13)
-            H_Time = font.render(getTimeToMinutes(), 1, (255,255,255))
-            H_User = font.render(User.getUsername(), 1, (255,255,255))
+			self.Header.draw(self.screen)
 
-            self.screen.blit(H_Time, (275, 8))
-            self.screen.blit(H_User, (10, 8))
 
             # Display buttons
             self.BTN_Phone.draw(self.screen)
@@ -83,8 +82,27 @@ class WIN_Main:
             pygame.display.flip()
         return 0
 
+# Header class
+class Header:
+	def __init__(self, rect):
+		self.rect = rect
+		self.color = pygame.Color((0,0,0))
+		self.font = pygame.font.SysFont("verdana", 13)
 
+	def selected(self, pos):
+		x1 = self.rect[0]
+		y1 = self.rect[1]
+		x2 = x1 + self.rect[2] - 1
+		y2 = y1 + self.rect[3] - 1
+		if ((pos[0] >= x1) and (pos[0] <= x2) and (pos[1] >= y1) and (pos[1] <= y2)):
+			return True
+		else:
+			return False
 
+	def draw(self, screen):
+		screen.blit(self.font.render(User.getUsername(), 1, (255,255,255), (275, 8)) # Display user
+		screen.blit(self.font.render(getTimeToMinutes(), 1, (255,255,255)), (10, 8)) # Display time
+		
 # Button class
 class Button:
     def __init__(self, rect):
