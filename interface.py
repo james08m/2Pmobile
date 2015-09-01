@@ -102,8 +102,8 @@ class Header:
 			return False
 
 	def draw(self, screen):
-		screen.blit(self.font.render(User.getUsername(), 1, (255,255,255), (275, 8)) # Display user
-		screen.blit(self.font.render(getTimeToMinutes(), 1, (255,255,255)), (10, 8)) # Display time
+		screen.blit(self.font.render(User.getUsername(), 1, (255,255,255), (275, 8))
+		screen.blit(self.font.render(getTimeToMinutes(), 1, (255,255,255)), (10, 8))
 		
 
 
