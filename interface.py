@@ -19,8 +19,8 @@ class WIN_Main:
         self.IMG_Camera = pygame.image.load("icons/icamera.png")
         self.IMG_Video = pygame.image.load("icons/ivideo.png")
 
-		# Header ------------------------------------------------
-		self.Header = Header((0,0,20,240))
+        # Header ------------------------------------------------
+        self.Header = Header((0,0,20,240))
 
         # Buttons -----------------------------------------------
         self.BTN_Phone = Button((35,385,60,60))
@@ -69,7 +69,7 @@ class WIN_Main:
             self.screen.blit(self.IMG_Background, (0,0))
 
             # Display header
-			self.Header.draw(self.screen)
+            self.Header.draw(self.screen)
 
 
             # Display buttons
@@ -81,6 +81,8 @@ class WIN_Main:
             self.BTN_Video.draw(self.screen)
             pygame.display.flip()
         return 0
+
+
 
 # Header class
 class Header:
@@ -103,6 +105,8 @@ class Header:
 		screen.blit(self.font.render(User.getUsername(), 1, (255,255,255), (275, 8)) # Display user
 		screen.blit(self.font.render(getTimeToMinutes(), 1, (255,255,255)), (10, 8)) # Display time
 		
+
+
 # Button class
 class Button:
     def __init__(self, rect):
