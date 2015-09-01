@@ -49,7 +49,9 @@ class WIN_Main:
             event = pygame.event.poll()
             if event.type == pygame.MOUSEBUTTONDOWN: # If mouse down
                 mouse_position = pygame.mouse.get_pos()
-                if self.BTN_Phone.selected(mouse_position):
+                if self.Header.selected(mouse_position):
+                    Header.dropDown()
+                elif self.BTN_Phone.selected(mouse_position):
                     print "Phone"
                 elif self.BTN_Messages.selected(mouse_position):
                     print "Messages"
