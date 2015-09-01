@@ -106,8 +106,10 @@ class Header:
 			return False
 
 	def dropDown(self):
-		while self.rect[3] < 420:
-			self.rect[3] = self.rect[3] + 2
+		height = 25		
+		while height < 420:
+			self.rect = (0,0,380,height)
+			height = height + 2
 			pygame.display.update(Header.rect)
 			time.sleep(1)
 			
