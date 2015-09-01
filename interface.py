@@ -1,4 +1,5 @@
 import pygame
+iport time
 from utilities import *
 from user import *
 
@@ -49,7 +50,11 @@ class WIN_Main:
             if event.type == pygame.MOUSEBUTTONDOWN: # If mouse down
                 mouse_position = pygame.mouse.get_pos()
                 if self.BTN_Phone.selected(mouse_position):
-                    print "Phone"
+                    size = 25
+					while size < 420:
+						Header.rect[3] = Header.rect[3] + 1
+						pygame.display.update(Header.rect)
+						time.sleep(1)
                 elif self.BTN_Messages.selected(mouse_position):
                     print "Messages"
                 elif self.BTN_Music.selected(mouse_position):
