@@ -1,5 +1,5 @@
 import pygame
-iport time
+import time
 from utilities import *
 from user import *
 
