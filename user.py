@@ -8,11 +8,11 @@ class User:
 
 	# Return actual linux user connected
 	def getUsername(self):
-	return getpass.getuser()
+		return getpass.getuser()
 
 	# Return user filepath
 	def getFilepath(self):
-	return os.environ['HOME']
+		return os.environ['HOME']
 
 
 # If run as main ...
