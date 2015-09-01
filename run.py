@@ -11,9 +11,6 @@ from utilities import *
 #log.load()
 #log.add("["+ getTimeToSecondes() + "] booting...")
 #log.add("Loading user...")
-#user = User()
-#user.load()
-#user.lastlogin = getTimeToMinutes()
 
 #log.add("Init framebuffer/touchscreen and environment variables...")
 # Init framebuffer/touchscreen environment variables     # Code from piPhone github
@@ -26,15 +23,14 @@ os.putenv('SDL_MOUSEDEV'   , '/dev/input/touchscreen')
 #log.add("Init screen display...")
 pygame.init()
 pygame.mouse.set_visible(False)
-window  = pygame.display.set_mode((320,480))
+screen  = pygame.display.set_mode((320,480))
 
 # Mainloop ----------------------------------------------
 #log.add("Lunching...")
-WIN_Main = Win_Main(window, 0)
-WIN_Main.exect()
+window = WIN_Main(screen, 0)
+window.exect()
 
 #log.add("Saving user..")
-#user.save()
 #log.add("Quit")
 
 #log.save()

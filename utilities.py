@@ -20,9 +20,6 @@ def getTimeToSecondes():
         time_str += "0"
     time_str += str(current_time.second)
     return time_str
-
-def getUser():
-	return getpass.getuser()
 	
 
 

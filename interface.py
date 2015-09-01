@@ -1,9 +1,10 @@
 import pygame
 from utilities import *
+from user import *
 
 
 # Main window class
-class Win_Main:
+class WIN_Main:
     def __init__(self, screen, code):
         self.screen = screen
         self.open = True
@@ -66,7 +67,7 @@ class Win_Main:
             # Display header
             font = pygame.font.SysFont("verdana", 13)
             H_Time = font.render(getTimeToMinutes(), 1, (255,255,255))
-            H_User = font.render(getUser(), 1, (255,255,255))
+            H_User = font.render(User.getUsername(), 1, (255,255,255))
 
             self.screen.blit(H_Time, (275, 8))
             self.screen.blit(H_User, (10, 8))
