@@ -21,7 +21,7 @@ class WIN_Main:
         self.IMG_Video = pygame.image.load("icons/ivideo.png")
 
         # Header ------------------------------------------------
-        self.Header = Header((0,0,20,240))
+        self.Header = Header((0,0,380,20))
 
         # Buttons -----------------------------------------------
         self.BTN_Phone = Button((35,385,60,60))
@@ -105,11 +105,10 @@ class Header:
 	def draw(self, screen):
 		
 		# Display background in RGBA (Opacity)
-		bg = pygame.Surface((self.rect[3], self.rect[2]), pygame.SRCALPHA)   # per-pixel alpha
-		bg.fill(self.color) 
+		bg = pygame.Surface((self.rect[2], self.rect[3]), pygame.SRCALPHA)   # per-pixel alpha
+		bg.fill(self.color)
+ 
 		screen.blit(bg, self.rect)
-
-		screen.fill(self.color, self.rect)
 		screen.blit(self.font.render(User.getUsername(), 1, (255,255,255)), (275, 8))
 		screen.blit(self.font.render(getTimeToMinutes(), 1, (255,255,255)), (10, 8))
 		
