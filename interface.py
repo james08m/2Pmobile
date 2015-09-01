@@ -102,6 +102,14 @@ class Header:
 			return False
 
 	def draw(self, screen):
+		
+		# Display background in RGBA (Opacity)
+		bg = pygame.Surface(self.rect)
+		bg.set_alpha(128)
+		bg.fill(self.color) 
+		screen.blit(bg, self.rect)
+
+		screen.fill(self.color, self.rect)
 		screen.blit(self.font.render(User.getUsername(), 1, (255,255,255)), (275, 8))
 		screen.blit(self.font.render(getTimeToMinutes(), 1, (255,255,255)), (10, 8))
 		
