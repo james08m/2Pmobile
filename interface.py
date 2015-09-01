@@ -110,7 +110,7 @@ class Header:
 		while height < 420:
 			self.rect = (0,0,380,height)
 			height = height + 2
-			pygame.display.update(Header.rect)
+			pygame.display.update(self.rect)
 			time.sleep(1)
 			
 
