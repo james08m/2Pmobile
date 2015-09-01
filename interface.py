@@ -50,7 +50,7 @@ class WIN_Main:
             if event.type == pygame.MOUSEBUTTONDOWN: # If mouse down
                 mouse_position = pygame.mouse.get_pos()
                 if self.Header.selected(mouse_position):
-                    self.Header.dropDown()
+                    print "Header"
                 elif self.BTN_Phone.selected(mouse_position):
                     print "Phone"
                 elif self.BTN_Messages.selected(mouse_position):
@@ -103,16 +103,7 @@ class Header:
 		if ((pos[0] >= x1) and (pos[0] <= x2) and (pos[1] >= y1) and (pos[1] <= y2)):
 			return True
 		else:
-			return False
-
-	def dropDown(self):
-		height = 25		
-		while height < 420:
-			self.rect = (0,0,380,height)
-			height = height + 2
-			pygame.display.update(self.rect)
-			time.sleep(1)
-			
+			return False		
 
 	def draw(self, screen):
 		
