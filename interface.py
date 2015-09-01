@@ -21,7 +21,7 @@ class WIN_Main:
         self.IMG_Video = pygame.image.load("icons/ivideo.png")
 
         # Header ------------------------------------------------
-        self.Header = Header((0,0,380,20))
+        self.Header = Header((0,0,380,25))
 
         # Buttons -----------------------------------------------
         self.BTN_Phone = Button((35,385,60,60))
