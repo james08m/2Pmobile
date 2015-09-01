@@ -13,8 +13,3 @@ class User:
 	# Return user filepath
 	def getFilepath(self):
 		return os.environ['HOME']
-
-
-# If run as main ...
-if __name__ == '__main__':
-	
