@@ -8,10 +8,10 @@ class User:
 		
 	# Return actual linux user connected
 	@staticmethod
-	def getUsername(self):
+	def getUsername():
 		return getpass.getuser()
 	
 	# Return user filepath
 	@staticmethod
-	def getFilepath(self):
+	def getFilepath():
 		return os.environ['HOME']
