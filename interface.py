@@ -90,7 +90,7 @@ class Header:
 	def __init__(self, rect):
 		self.rect = rect
 		self.color = (0,0,0,128)
-		self.font = pygame.font.SysFont("verdana", 13)
+		self.font = pygame.font.SysFont("tahoma", 13)
 
 	def selected(self, pos):
 		x1 = self.rect[0]
@@ -109,8 +109,8 @@ class Header:
 		bg.fill(self.color)
  
 		screen.blit(bg, self.rect)
-		screen.blit(self.font.render(User.getUsername(), 1, (255,255,255)), (275, 8))
-		screen.blit(self.font.render(getTimeToMinutes(), 1, (255,255,255)), (10, 8))
+		screen.blit(self.font.render(User.getUsername(), 1, (255,255,255)), (10, 7))
+		screen.blit(self.font.render(getTimeToMinutes(), 1, (255,255,255)), (275, 7))
 		
 
 
