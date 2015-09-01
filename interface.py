@@ -11,6 +11,7 @@ class WIN_Main:
         self.lastwindow = code
 
         # Images  -----------------------------------------------
+		self.IMG_Background = pygame,image.load(User.getFilepath()+"/Pictures/bg.jpg") # Get baclground image
         self.IMG_Phone = pygame.image.load("icons/iphone.png")
         self.IMG_Messages = pygame.image.load("icons/imessages2.png")
         self.IMG_Music = pygame.image.load("icons/imusic.png")
@@ -61,8 +62,8 @@ class WIN_Main:
                 if event.key == pygame.K_ESCAPE:
                     self.open = False
 
-            # Display components
-            self.screen.fill((0,0,0))
+            # Display background
+            self.screen.blit(self.IMG_Background, (0,0))
 
             # Display header
             font = pygame.font.SysFont("verdana", 13)
