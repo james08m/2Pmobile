@@ -4,8 +4,8 @@ import getpass
 # User class
 class User:
 	# Constructor
-	def __init__(self):				
-
+	#def __init__(self):				
+		
 	# Return actual linux user connected
 	def getUsername(self):
 		return getpass.getuser()
