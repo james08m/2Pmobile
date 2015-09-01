@@ -89,7 +89,7 @@ class WIN_Main:
 class Header:
 	def __init__(self, rect):
 		self.rect = rect
-		self.color = (0,0,0)
+		self.color = (0,0,0,128)
 		self.font = pygame.font.SysFont("verdana", 13)
 
 	def selected(self, pos):
@@ -105,8 +105,7 @@ class Header:
 	def draw(self, screen):
 		
 		# Display background in RGBA (Opacity)
-		bg = pygame.Surface((self.rect[2], self.rect[3]))
-		bg.set_alpha(128)
+		bg = pygame.Surface((self.rect[3], self.rect[2]), pygame.SRCALPHA)   # per-pixel alpha
 		bg.fill(self.color) 
 		screen.blit(bg, self.rect)
 
