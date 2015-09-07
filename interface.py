@@ -91,7 +91,7 @@ class WIN_Phone:
 	def __init__(self, screen):
 		self.screen = screen
 		self.rect = (0,0,320,0)
-		self.color = (0,0,0,200)
+		self.color = (0,0,0,180)
 		self.open = True
 
 		# Images -----------------------------------------------
@@ -137,7 +137,7 @@ class WIN_Phone:
 			surface.fill(self.color)
 			self.screen.blit(surface,(0,height,320,1))
 			pygame.display.flip()
-			time.sleep(0.0002)
+			time.sleep(0.0001)
 		
 
 # Header class
