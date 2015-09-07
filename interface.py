@@ -6,14 +6,13 @@ from user import *
 
 # Main window class
 class WIN_Main:
-    def __init__(self, screen, code):
+    def __init__(self, screen):
         self.screen = screen
         self.open = True
-        self.lastwindow = code
 
         # Images -----------------------------------------------
         #self.IMG_Background = pygame.image.load(User.getFilepath()+"/Pictures/bg.jpg")
-        self.IMG_Background = pygame.image.load("/home/pi/Pictures/bg.jpg")
+        self.IMG_Background = pygame.image.load("/home/j08m/Pictures/bg.jpg")
         self.IMG_Phone = pygame.image.load("icons/iphone.png")
         self.IMG_Messages = pygame.image.load("icons/imessages2.png")
         self.IMG_Music = pygame.image.load("icons/imusic.png")
@@ -52,7 +51,8 @@ class WIN_Main:
                 if self.Header.selected(mouse_position):
                     print "Header"
                 elif self.BTN_Phone.selected(mouse_position):
-                    print "Phone"
+                    win = WIN_Phone(self.screen)
+                    win.exect()
                 elif self.BTN_Messages.selected(mouse_position):
                     print "Messages"
                 elif self.BTN_Music.selected(mouse_position):
@@ -64,8 +64,7 @@ class WIN_Main:
                 elif self.BTN_Video.selected(mouse_position):
                     print "Video"
 
-
-            elif event.type == pygame.KEYDOWN: # If key down (not supose to happen)
+            elif event.type == pygame.KEYDOWN: # If key down (not supose to happen in release)
                 if event.key == pygame.K_ESCAPE:
                     self.open = False
 
@@ -83,10 +82,63 @@ class WIN_Main:
             self.BTN_Contact.draw(self.screen)
             self.BTN_Camera.draw(self.screen)
             self.BTN_Video.draw(self.screen)
+
             pygame.display.flip()
         return 0
 
+# Phone window class
+class WIN_Phone:
+	def __init__(self, screen):
+		self.screen = screen
+		self.rect = (0,0,320,0)
+		self.color = (0,0,0,200)
+		self.open = True
 
+		# Images -----------------------------------------------
+
+		# Buttons ----------------------------------------------
+
+	def exect(self):
+		
+		#Dropdown the background
+		self.dropdown()		
+		
+		while self.open:
+			# Event handling
+			event = pygame.event.poll()
+			if event.type == pygame.MOUSEBUTTONDOWN: # If mouse down
+				mouse_position = pygame.mouse.get_pos()
+				if self.Header.selected(mouse_position):
+					print "Header"
+				elif self.BTN_Phone.selected(mouse_position):
+					print "Phone"
+				elif self.BTN_Messages.selected(mouse_position):
+					print "Messages"
+				elif self.BTN_Music.selected(mouse_position):
+					print "Music"
+				elif self.BTN_Contact.selected(mouse_position):
+					print "Contact"
+				elif self.BTN_Camera.selected(mouse_position):
+					print "Camera"
+				elif self.BTN_Video.selected(mouse_position):
+					print "Video"
+			
+			elif event.type == pygame.KEYDOWN: # If key down (not supose to happen in release)
+				if event.key == pygame.K_ESCAPE:
+					self.open = False
+	
+	def dropdown(self):
+		# Dropdown background in RGBA (Opacity)
+		height = 1
+		while height < 480:
+			self.rect = (0, height,320, height)
+			height += 1
+			surface = pygame.Surface((320, 1), pygame.SRCALPHA)   # per-pixel alpha
+			surface.fill(self.color)
+			self.screen.blit(surface,(0,height,320,1))
+			pygame.display.flip()
+			time.sleep(0.0002)
+		
 
 # Header class
 class Header:

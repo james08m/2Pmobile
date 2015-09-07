@@ -26,7 +26,7 @@ display  = pygame.display.set_mode((320,480))
 
 # Mainloop ----------------------------------------------
 #log.add("Lunching...")
-window = WIN_Main(display, 0)
+window = WIN_Main(display)
 window.exect()
 
 #log.add("Saving user..")
