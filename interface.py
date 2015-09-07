@@ -137,7 +137,6 @@ class WIN_Phone:
 			surface.fill(self.color)
 			self.screen.blit(surface,(0,height,320,1))
 			pygame.display.flip()
-			time.sleep(0.00001)
 		
 
 # Header class
