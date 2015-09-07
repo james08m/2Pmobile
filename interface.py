@@ -86,6 +86,7 @@ class WIN_Main:
             pygame.display.flip()
         return 0
 
+
 # Phone window class
 class WIN_Phone:
 	def __init__(self, screen):
@@ -95,6 +96,9 @@ class WIN_Phone:
 		self.open = True
 
 		# Images -----------------------------------------------
+
+        # Header ------------------------------------------------
+		self.Header = Header((0,0,380,25))
 
 		# Buttons ----------------------------------------------
 
@@ -110,26 +114,22 @@ class WIN_Phone:
 				mouse_position = pygame.mouse.get_pos()
 				if self.Header.selected(mouse_position):
 					print "Header"
-				elif self.BTN_Phone.selected(mouse_position):
-					print "Phone"
-				elif self.BTN_Messages.selected(mouse_position):
-					print "Messages"
-				elif self.BTN_Music.selected(mouse_position):
-					print "Music"
-				elif self.BTN_Contact.selected(mouse_position):
-					print "Contact"
-				elif self.BTN_Camera.selected(mouse_position):
-					print "Camera"
-				elif self.BTN_Video.selected(mouse_position):
-					print "Video"
 			
 			elif event.type == pygame.KEYDOWN: # If key down (not supose to happen in release)
 				if event.key == pygame.K_ESCAPE:
 					self.open = False
+
+			# Display header
+			self.Header.draw(self.screen)
+
+			pygame.display.flip()
 	
 	def dropdown(self):
+		# Display header
+		self.Header.draw(self.screen)
+
 		# Dropdown background in RGBA (Opacity)
-		height = 1
+		height = 24
 		while height < 480:
 			self.rect = (0, height,320, height)
 			height += 1
