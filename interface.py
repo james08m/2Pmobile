@@ -12,7 +12,7 @@ class WIN_Main:
 
         # Images -----------------------------------------------
         #self.IMG_Background = pygame.image.load(User.getFilepath()+"/Pictures/bg.jpg")
-        self.IMG_Background = pygame.image.load("/home/j08m/Pictures/bg.jpg")
+        self.IMG_Background = pygame.image.load("/home/pi/Pictures/bg.jpg")
         self.IMG_Phone = pygame.image.load("icons/iphone.png")
         self.IMG_Messages = pygame.image.load("icons/imessages2.png")
         self.IMG_Music = pygame.image.load("icons/imusic.png")
